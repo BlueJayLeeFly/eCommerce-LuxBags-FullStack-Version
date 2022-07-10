@@ -4,16 +4,18 @@ const PORT = 3000;
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-	res.send('index');
+	res.render('index');
 });
 
 app.get('/shop', (req, res) => {
-	res.send('shop');
+	res.render('shop');
 });
 
 app.get('/cart', (req, res) => {
-	res.send('cart');
+	res.render('cart');
 });
 
 app.listen(PORT, () => {
